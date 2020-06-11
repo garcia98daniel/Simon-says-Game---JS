@@ -1,0 +1,91 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+    --my-yellow: yellow;
+    --my-dark-yellow: #cece1a;
+
+    --my-blue: blue;
+    --my-dark-blue: darkblue;
+
+    --my-orange: orange;
+    --my-dark-orange: darkorange;
+
+    --my-red: red;
+    --my-dark-red: darkred;
+
+    --my-green: green;
+    --my-dark-green: darkgreen;
+}
+
+.wrapper_cube {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    /* flex wrap lo usamos para decirle a los hijos que si no caben a lo largo bajen y se acomodeb */
+    flex-wrap: wrap;
+    position: relative; 
+    border-radius: 50%;
+    /*overflow no deja salir a los hijos */
+    overflow: auto; 
+}
+
+.cube {
+    box-sizing: border-box;
+    height: 50%;
+    width: 50%;
+    cursor: pointer;
+     transition: background-color 1s ease-out;
+}
+
+.cube:active {
+    transition: background-color 0.2s ease-out;
+}
+
+.center_cube{
+    position: absolute;
+    z-index: 200;
+    right: 25%;
+    top: 25%;
+    border-radius: 50%;
+    background: var(--my-dark-yellow);
+}
+
+.center_cube:active {
+    background: var(--my-yellow);
+}
+
+.cube_1 {
+    background: var(--my-dark-blue);
+}
+
+.cube_1:active {
+    background: var(--my-blue);
+}
+
+.cube_2 {
+    background: var(--my-dark-red);
+}
+
+.cube_2:active {
+    background: var(--my-red);
+}
+
+.cube_3 {
+    background: var(--my-dark-orange);
+}
+
+.cube_3:active {
+    background: var(--my-orange);
+}
+
+.cube_4 {
+    background: var(--my-dark-green);
+}
+
+.cube_4:active {
+    background: var(--my-green);
+}
