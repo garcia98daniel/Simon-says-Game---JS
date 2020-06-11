@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="game.css"/> 
-    <link rel="script" href="game.js"/> 
+    <script src="game.js">ey</script>
     <title>Document</title>
 </head>
 <body>
+    <p class="instructions">
+          <strong>Instructions</strong>
+          <br>
+          Try to repeat the color sequence that the machine show you.
+          <br><br>
+          <strong>note:</strong> your turn start when the button "start" change his color.
+    </p>
     <H1>My first game with js </H1>
     <div class="wrapper_cube">
-        <div class="cube center_cube"></div>
+        <div class="cube center_cube" ></div>
         <div class="cube cube_1"></div>
         <div class="cube cube_2"></div>
         <div class="cube cube_3"></div>
         <div class="cube cube_4"></div>
     </div>
+    <button class="btn_start" onclick="start()" >Start</button>
 </body>
 </html>

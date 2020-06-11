@@ -2,28 +2,38 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    font-family: Comic Sans MS, Comic Sans, cursive;
+     punto 
+background: rgba(212,228,239,1);
+background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(134,174,204,1)));
+background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+    }
 
 :root {
     --my-yellow: yellow;
-    --my-dark-yellow: #cece1a;
+    --my-dark-yellow: #81811d;
 
     --my-blue: blue;
     --my-dark-blue: darkblue;
 
-    --my-orange: orange;
-    --my-dark-orange: darkorange;
+    --my-agua: #00e2ff;
+    --my-dark-agua: #007180;
 
     --my-red: red;
     --my-dark-red: darkred;
 
-    --my-green: green;
-    --my-dark-green: darkgreen;
+    --my-green: #00bd00;
+    --my-dark-green: #015a01;
 }
 
 .wrapper_cube {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     display: flex;
     /* flex wrap lo usamos para decirle a los hijos que si no caben a lo largo bajen y se acomodeb */
     flex-wrap: wrap;
@@ -31,6 +41,21 @@ body {
     border-radius: 50%;
     /*overflow no deja salir a los hijos */
     overflow: auto; 
+    box-shadow: 0 8px 0 black;
+    border: 5px solid black;
+}
+
+.instructions{
+    position: absolute;
+    left: 0;
+    top:25px;
+    width: 200px;
+    text-align: justify;  
+    padding: 10px;
+    border: 1px solid black;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+
 }
 
 .cube {
@@ -46,12 +71,14 @@ body {
 }
 
 .center_cube{
+    border: 5px solid black;
     position: absolute;
     z-index: 200;
     right: 25%;
     top: 25%;
     border-radius: 50%;
     background: var(--my-dark-yellow);
+    box-shadow: 0 3px 0 black;
 }
 
 .center_cube:active {
@@ -60,6 +87,8 @@ body {
 
 .cube_1 {
     background: var(--my-dark-blue);
+    border-right: 5px solid black;
+    border-bottom: 5px solid black;
 }
 
 .cube_1:active {
@@ -68,6 +97,7 @@ body {
 
 .cube_2 {
     background: var(--my-dark-red);
+    border-bottom: 5px solid black;
 }
 
 .cube_2:active {
@@ -75,17 +105,45 @@ body {
 }
 
 .cube_3 {
-    background: var(--my-dark-orange);
+    background: var(--my-dark-green);
+    border-right: 5px solid black;
 }
 
 .cube_3:active {
-    background: var(--my-orange);
+    background: var(--my-green);
 }
 
 .cube_4 {
-    background: var(--my-dark-green);
+    background: var(--my-dark-agua);
 }
 
 .cube_4:active {
-    background: var(--my-green);
+    background: var(--my-agua);
+}
+
+
+
+.btn_start{
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: OCR A Std, monospace;  
+    background: transparent;
+    cursor:pointer;
+    border: 2px solid gray;
+    border-bottom: 4px solid #797979;
+    color:#797979;
+    outline: none;
+}
+
+
+.btn_start:hover{
+    border-color:black;
+    color:black;
+}
+
+.btn_start:active{
+    transform: scale(.9);
 }
