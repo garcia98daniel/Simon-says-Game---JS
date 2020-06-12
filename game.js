@@ -1,12 +1,17 @@
-let lvl = 5;
+let lvl = 3;
 
 function start(){
 	var colorSequence = [];
 
 	for (var i = 0; i < lvl; i++) {
-		colorSequence.push(generate_random_number());
+		let color = generate_random_number();
+		// colorSequence.push(generate_random_number());
+		setTimeout(function(){
+     		showing_simons_colors(color);
+	  	},3000 * i);
+		colorSequence.push(color);
 	}
-	showing_simons_colors(colorSequence);
+	
 	console.log(colorSequence);
 }
 
@@ -15,15 +20,14 @@ function generate_random_number(){
 	return randomNumber;
 }
 
-function showing_simons_colors(colors){
+function showing_simons_colors(color){
 
-	for (let i=0; i<colors.length; i++) { 
-   		change_color(colors[i]); 
+   		change_color(color); 
 
    		setTimeout(function(){
      		reset_color();
-	  	},4000 * i);
-	}  
+	  	},3000 );
+	  
 }
 
 function change_color(div) {
@@ -63,7 +67,7 @@ function change_color(div) {
 				  default:
 				  	   break;
 			}
-	  }, 1000 * div); 
+	  }, 1000); 
 	}
 
 function reset_color (){

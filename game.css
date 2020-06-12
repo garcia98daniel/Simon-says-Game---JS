@@ -58,6 +58,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', end
 
 }
 
+.lvl{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;  
+}
+
+
 .cube {
     box-sizing: border-box;
     height: 50%;
