@@ -7,26 +7,25 @@
     <script src="game.js">ey</script>
     <title>Document</title>
 </head>
-<body>
+<body >
     <p class="instructions">
           <strong>Instructions</strong>
           <br>
-          Try to repeat the color sequence that the machine show you.
+          Try to repeat the color sequence.
           <br><br>
-          <strong>note:</strong> your turn start when the button "start" change his color.
     </p>
 
-    <div class="lvl">
-          <b>LVL</b> <strong>1</strong>
+    <div class="lvl_container">
+          <b>LVL</b> <strong class="level"></strong>
     </div>
 
     <H1>My first game with js </H1>
     <div class="wrapper_cube">
-        <div class="cube center_cube" ></div>
-        <div class="cube cube_1"></div>
-        <div class="cube cube_2"></div>
-        <div class="cube cube_3"></div>
-        <div class="cube cube_4"></div>
+        <div class="cube center_cube" name="5"></div>
+        <div class="cube cube_1" name="1"></div>
+        <div class="cube cube_2" name="2"></div>
+        <div class="cube cube_3" name="3"></div>
+        <div class="cube cube_4" name="4"></div>
     </div>
     <button class="btn_start" onclick="start()" >Start</button>
 </body>
