@@ -5,14 +5,13 @@ window.onload = function() {
   	inicializar();
 };
 
-function inicializar(){
-	lvl=3;
+function inicializar(level = 3){
+	lvl=level;
 	const nivel = document.querySelector(".level");
 	nivel.innerHTML=lvl-2;
-
+	btnStart.innerHTML="Your turn";
 	playerColorsChosen = [];
-
-	
+	colorSequence = [];
 }
 
 function start(){
@@ -141,8 +140,11 @@ function playerTurn(light) {
 	
 	if(win()==1){
 		alert("ganaste");
+		lvl++;
+		inicializar(lvl);
 	}else if(win()==0){
 		alert("perdiste");
+		inicializar();
 	}
 }
 
