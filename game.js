@@ -1,25 +1,31 @@
 let lvl ;
 let playerColorsChosen;
 let colorSequence ;
+let newGame;
 window.onload = function() {
+	newGame = 1;
   	inicializar();
 };
 
 function inicializar(level = 3){
+	const btnStart = document.querySelector(".btn_start");
 	lvl=level;
 	const nivel = document.querySelector(".level");
 	nivel.innerHTML=lvl-2;
-	btnStart.innerHTML="Your turn";
+	btnStart.innerHTML="Start";
 	playerColorsChosen = [];
 	colorSequence = [];
 }
 
 function start(){
-	const cubo = document.querySelectorAll(".cube").forEach(cubo => {
-	  cubo.addEventListener('click', event => {
-    	playerTurn(event.target.getAttribute('name'));
-  	  })
-	})
+	if(newGame == 1){
+		const cubo = document.querySelectorAll(".cube").forEach(cubo => {
+			cubo.addEventListener('click', event => {
+				playerTurn(event.target.getAttribute('name'));
+			})
+		})
+	}
+	newGame++;
 
 	const btnStart = document.querySelector(".btn_start");
 
@@ -51,13 +57,11 @@ function generate_random_number(){
 }
 
 function showing_simons_colors(color){
-
    		change_color(color); 
 
    		setTimeout(function(){
      		reset_color();
 	  	},1500 );
-	  
 }
 
 function change_color(div) {
@@ -139,12 +143,14 @@ function playerTurn(light) {
 
 	
 	if(win()==1){
-		alert("ganaste");
+		alert("ganaste !! siguiente nivel");
 		lvl++;
 		inicializar(lvl);
+		
 	}else if(win()==0){
 		alert("perdiste");
 		inicializar();
+		
 	}
 }
 
