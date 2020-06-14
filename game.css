@@ -58,7 +58,7 @@ h1{
     border: 1px solid black;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    
+    font-size: 20px;
 }
 
 .lvl_container{
@@ -72,6 +72,8 @@ h1{
     border: 1px solid black;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;  
+    font-size: 20px;
+    transition: background-color 1s ease-out;
 }
 
 

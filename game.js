@@ -9,10 +9,10 @@ window.onload = function() {
 
 function inicializar(level = 3){
 	const btnStart = document.querySelector(".btn_start");
+	btnStart.innerHTML="Start";
 	lvl=level;
 	const nivel = document.querySelector(".level");
 	nivel.innerHTML=lvl-2;
-	btnStart.innerHTML="Start";
 	playerColorsChosen = [];
 	colorSequence = [];
 }
@@ -119,8 +119,11 @@ function reset_color (){
 	const greenLight = document.querySelector(".cube_3");
 	const aquaLight = document.querySelector(".cube_4");
 	const yellowLight = document.querySelector(".center_cube");
-	const btnStart = document.querySelector(".btn_start");
 
+	const btnStart = document.querySelector(".btn_start");
+	const lvlContainer = document.querySelector(".lvl_container");
+
+	lvlContainer.style.backgroundColor="transparent";
 	btnStart.style.background  = "transparent";
 
 	
@@ -133,6 +136,7 @@ function reset_color (){
 }
 
 function playerTurn(light) {
+	const lvlContainer = document.querySelector(".lvl_container");
 	let lightLocal = parseInt(light);
 	playerColorsChosen.push(lightLocal);
 	change_color(lightLocal); 
@@ -144,13 +148,17 @@ function playerTurn(light) {
 	
 	if(win()==1){
 		alert("ganaste !! siguiente nivel");
+		setTimeout(function(){
+			lvlContainer.style.backgroundColor="white";
+		},200 ); //menos que el time de reset_color() para poder ver el cambio del div del nivel
+		setTimeout(function(){
+			reset_color();
+		},2000 );
 		lvl++;
 		inicializar(lvl);
-		
 	}else if(win()==0){
 		alert("perdiste");
 		inicializar();
-		
 	}
 }
 
