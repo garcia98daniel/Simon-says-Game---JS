@@ -3,6 +3,8 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
     background: rgba(212,228,239,1);
     background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(134,174,204,1)));
@@ -184,7 +186,8 @@ h1{
 
     .instructions{
         position: relative;
-        width: 100%;
+        align-self: flex-start;
+        width:40%;
         font-size: 20px;
         margin: 0;
         margin-bottom: 1px;
@@ -193,7 +196,8 @@ h1{
     .lvl_container{
         position: relative;
         justify-content: center;
-        width: 100%;
+        align-self: flex-end;
+        width:40%;
         font-size: 20px;
         margin-bottom: 50px;
 

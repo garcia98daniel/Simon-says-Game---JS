@@ -4,7 +4,13 @@ let colorSequence ;
 let newGame;
 window.onload = function() {
 	newGame = 1;
-  	inicializar();
+	  inicializar();
+	  const cubo = document.querySelectorAll(".cube").forEach(cubo => {
+		cubo.addEventListener('click', event => {
+			playerTurn(event.target.getAttribute('name'));
+		})
+		console.log("creados")
+	})
 };
 
 function inicializar(level = 3){
@@ -17,16 +23,9 @@ function inicializar(level = 3){
 	colorSequence = [];
 }
 
-function start(){
-	if(newGame == 1){
-		const cubo = document.querySelectorAll(".cube").forEach(cubo => {
-			cubo.addEventListener('click', event => {
-				playerTurn(event.target.getAttribute('name'));
-			})
-		})
-	}
-	newGame++;
 
+
+function start(){
 	const btnStart = document.querySelector(".btn_start");
 
 	 colorSequence = [];
@@ -45,7 +44,7 @@ function start(){
 		btnStart.style.transform = "scale(1)";
 		btnStart.style.borderColor  = "black";
 		btnStart.style.color  = "black";
-		btnStart.innerHTML="Your turn";
+		btnStart.innerHTML="Tu turno";
 	},1500 * lvl);
 
 	// console.log(colorSequence);
@@ -136,29 +135,32 @@ function reset_color (){
 }
 
 function playerTurn(light) {
-	const lvlContainer = document.querySelector(".lvl_container");
-	let lightLocal = parseInt(light);
-	playerColorsChosen.push(lightLocal);
-	change_color(lightLocal); 
-	setTimeout(function(){
-     		reset_color();
-	},700 );
-	// console.log(playerColorsChosen);
+	const btnStart = document.querySelector(".btn_start");
+	if(btnStart.innerHTML == "Tu turno"){
+		const lvlContainer = document.querySelector(".lvl_container");
+		let lightLocal = parseInt(light);
+		playerColorsChosen.push(lightLocal);
+		change_color(lightLocal); 
+		setTimeout(function(){
+				reset_color();
+		},700 );
+		// console.log(playerColorsChosen);
 
-	
-	if(win()==1){
-		alert("ganaste !! siguiente nivel");
-		setTimeout(function(){
-			lvlContainer.style.backgroundColor="white";
-		},200 ); //menos que el time de reset_color() para poder ver el cambio del div del nivel
-		setTimeout(function(){
-			reset_color();
-		},2000 );
-		lvl++;
-		inicializar(lvl);
-	}else if(win()==0){
-		alert("perdiste");
-		inicializar();
+		
+		if(win()==1){
+			alert("ganaste !! siguiente nivel");
+			setTimeout(function(){
+				lvlContainer.style.backgroundColor="white";
+			},200 ); //menos que el time de reset_color() para poder ver el cambio del div del nivel
+			setTimeout(function(){
+				reset_color();
+			},2000 );
+			lvl++;
+			inicializar(lvl);
+		}else if(win()==0){
+			alert("perdiste");
+			inicializar();
+		}
 	}
 }
 
