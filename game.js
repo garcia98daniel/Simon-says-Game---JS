@@ -148,7 +148,7 @@ function playerTurn(light) {
 
 		
 		if(win()==1){
-			alert("ganaste !! siguiente nivel");
+			alert("GANASTE !! siguiente nivel");
 			setTimeout(function(){
 				lvlContainer.style.backgroundColor="white";
 			},200 ); //menos que el time de reset_color() para poder ver el cambio del div del nivel
@@ -158,8 +158,14 @@ function playerTurn(light) {
 			lvl++;
 			inicializar(lvl);
 		}else if(win()==0){
-			alert("perdiste");
-			inicializar();
+
+			if(lvl>3){ //baja de nivel solo si es mayor que el nivel 1
+				alert("PERDISTE, bajas un nivel");
+				inicializar(lvl-1);
+			}else{
+				alert("PERDISTE :(");
+				inicializar();
+			}
 		}
 	}
 }
